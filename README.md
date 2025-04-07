@@ -1,4 +1,6 @@
-# React Simple login part developed using localstorage
+# React Simple login part developed ReactJS Authorization & Authentication: Login, Logout, Profile, Token Storage, Bearer, FakeAPI
+
+I AM USING json web token for login
 
 ## Future scopes:-
 
