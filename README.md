@@ -9,3 +9,8 @@ I AM USING json web token for login
 ### build an ecommerce site without backend
 
 ### Intigrate Node backend and MongoDB
+
+"email": "john@mail.com",
+"password": "changeme"
+
+[Authentication with JWT](https://fakeapi.platzi.com/en/rest/auth-jwt/)

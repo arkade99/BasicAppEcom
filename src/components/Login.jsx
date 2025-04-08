@@ -2,41 +2,36 @@ import React, { useState } from "react";
 import { Button, Form, Image } from "react-bootstrap";
 import bgImg from "../assets/bgImg.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   //const [formData, setFormData] = useState({ email: "", password: "" });
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const handelInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
-    }
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(email, password);
-    if (email == "" || password == "") {
-      alert("Please insert details");
-    } else {
-      const getAllData = JSON.parse(localStorage.getItem("User") || "[]");
-      console.log("getAllData", getAllData);
-      getAllData.map((user) => {
-        if (user.email == email && user.password == password) {
-          console.log(user.name);
-          // setMessage("");
-          alert("Wellcome " + user.name);
-          navigate("/home");
-        } else {
-          return setMessage("Invalid Email/ Password");
-        }
+    const payload = {
+      email: inputEmail,
+      password: inputPassword,
+    };
+    //console.log(payload);
+    axios
+      .post("https://api.escuelajs.co/api/v1/auth/login", payload)
+      .then((response) => {
+        localStorage.setItem(
+          "token",
+          JSON.stringify(response.data.access_token)
+        );
+        alert("Successful");
+        console.log("Success", response);
+      })
+      .catch((error) => {
+        alert("Login Failed");
+        console.log("Login Failed", error);
       });
-    }
   };
   return (
     <>
@@ -51,8 +46,7 @@ const Login = () => {
             <Form.Control
               type="name"
               placeholder="Enter email"
-              onChange={handelInput}
-              name="email"
+              onChange={(e) => setInputEmail(e.target.value)}
             />
           </Form.Group>
 
@@ -61,8 +55,7 @@ const Login = () => {
             <Form.Control
               type="password"
               placeholder="Enter password"
-              onChange={handelInput}
-              name="password"
+              onChange={(e) => setInputPassword(e.target.value)}
             />
           </Form.Group>
 
