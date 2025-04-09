@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const handelClick = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("Current_User");
     navigate("/");
   };
   const [apiData, setApiData] = useState();
@@ -16,9 +16,9 @@ const Home = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     axios
-      .get("https://api.escuelajs.co/api/v1/auth/profile", header)
+      .get("http://localhost:3000/user")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         console.log("Response is", response);
         setApiData(response.data);
       })
@@ -43,11 +43,7 @@ const Home = () => {
         </Button>
         {apiData && (
           <ul>
-            <li>Name: {apiData.name}</li>
-            <li>
-              Profile Picture: <img src={apiData.avatar} />
-            </li>
-            <li>email: {apiData.email}</li>
+            <li>Name: {apiData[0].name}</li>
           </ul>
         )}
         {/*  */}

@@ -13,25 +13,30 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = {
-      email: inputEmail,
-      password: inputPassword,
-    };
-    //console.log(payload);
-    axios
-      .post("https://api.escuelajs.co/api/v1/auth/login", payload)
-      .then((response) => {
-        localStorage.setItem(
-          "token",
-          JSON.stringify(response.data.access_token)
-        );
-        alert("Successful");
-        console.log("Success", response);
-      })
-      .catch((error) => {
-        alert("Login Failed");
-        console.log("Login Failed", error);
-      });
+    if (inputEmail == "" || inputPassword == "") {
+      alert("Please insert details");
+      setMessage("Please insert details");
+    } else {
+      axios
+        .get("http://localhost:3000/user")
+        .then((response) => {
+          const allUser = response.data;
+          allUser.map((user) => {
+            // console.log("User: ", user);
+            if (user.email == inputEmail && user.password == inputPassword) {
+              localStorage.setItem("Current_User", JSON.stringify(user));
+              alert("Login Successful");
+              navigate("/home");
+            }
+          });
+          setMessage("Please Insert Proper Email or Password");
+        })
+        .catch((error) => {
+          alert("Login Failed");
+          console.log("Login Failed", error.message);
+          setMessage(error.message);
+        });
+    }
   };
   return (
     <>

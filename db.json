@@ -1,0 +1,23 @@
+{
+  "user": [
+    {
+      "id": 0,
+      "name": "Arka",
+      "email": "arkapravade99@gmail.com",
+      "password": "12345"
+    },
+    { "id": 1, "name": "A", "email": "a", "password": "a" },
+    { "id": 2, "name": "B", "email": "b", "password": "b" }
+  ],
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

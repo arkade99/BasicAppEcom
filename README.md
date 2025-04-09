@@ -1,6 +1,10 @@
-# React Simple login part developed ReactJS Authorization & Authentication: Login, Logout, Profile, Token Storage, Bearer, FakeAPI
+# React Simple login part developed ReactJS json web Server data for login
 
-I AM USING json web token for login
+I AM USING locally stored json web Server data for login
+
+## To start json server
+
+npx json-server --watch db.json
 
 ## Future scopes:-
 
@@ -9,8 +13,3 @@ I AM USING json web token for login
 ### build an ecommerce site without backend
 
 ### Intigrate Node backend and MongoDB
-
-"email": "john@mail.com",
-"password": "changeme"
-
-[Authentication with JWT](https://fakeapi.platzi.com/en/rest/auth-jwt/)
