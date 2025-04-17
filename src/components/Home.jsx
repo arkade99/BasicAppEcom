@@ -2,19 +2,22 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+// import Authentication from "./Authentication";
 
 const Home = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("Current_User"));
+    if (token == null) {
+      alert("Please Log in"), navigate("/login");
+    }
+  }, []);
   const handelClick = () => {
     localStorage.removeItem("Current_User");
-    navigate("/");
+    navigate("/login");
   };
   const [apiData, setApiData] = useState();
   const getProfileData = () => {
-    const token = JSON.parse(localStorage.getItem("token"));
-    const header = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
     axios
       .get("http://localhost:3000/user")
       .then((response) => {
@@ -26,13 +29,7 @@ const Home = () => {
         console.log("Error ", error);
       });
   };
-
   console.log("ApiData: ", apiData);
-  // useEffect(() => {
-  //   axios
-  //     .get("https://jsonplaceholder.typicode.com/todos")
-  //     .then((response) => setApiData(response.data));
-  // }, []);
   return (
     <>
       <div className="main-page">
