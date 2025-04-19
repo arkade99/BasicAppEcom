@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import Authentication from "./Authentication";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,10 +11,6 @@ const Home = () => {
       alert("Please Log in"), navigate("/login");
     }
   }, []);
-  const handelClick = () => {
-    localStorage.removeItem("Current_User");
-    navigate("/login");
-  };
   const [apiData, setApiData] = useState();
   const getProfileData = () => {
     axios
@@ -43,10 +38,6 @@ const Home = () => {
             <li>Name: {apiData[0].name}</li>
           </ul>
         )}
-        {/*  */}
-        <Button onClick={handelClick} variant="danger">
-          Log Out
-        </Button>
       </div>
     </>
   );

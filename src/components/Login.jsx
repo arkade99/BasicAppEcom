@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Image } from "react-bootstrap";
 import bgImg from "../assets/bgImg.jpg";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { FetchUserData } from "./FetchData";
 
 const Login = () => {
   //const [formData, setFormData] = useState({ email: "", password: "" });
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [allUserData, setAllUserData] = useState(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const result = await FetchUserData();
+        setAllUserData(result);
+      } catch (error) {
+        console.error("Failed to fetch data in Login:", error);
+      }
+    };
+    getData();
+    console.log("allUserData: ", allUserData);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,25 +30,14 @@ const Login = () => {
       alert("Please insert details");
       setMessage("Please insert details");
     } else {
-      axios
-        .get("http://localhost:3000/user")
-        .then((response) => {
-          const allUser = response.data;
-          allUser.map((user) => {
-            // console.log("User: ", user);
-            if (user.email == inputEmail && user.password == inputPassword) {
-              localStorage.setItem("Current_User", JSON.stringify(user));
-              alert("Login Successful");
-              navigate("/home");
-            }
-          });
-          setMessage("Please Insert Proper Email or Password");
-        })
-        .catch((error) => {
-          alert("Login Failed");
-          console.log("Login Failed", error.message);
-          setMessage(error.message);
-        });
+      allUserData.map((user) => {
+        if (user.email == inputEmail && user.password == inputPassword) {
+          localStorage.setItem("Current_User", JSON.stringify(user));
+          alert("Login Successful");
+          navigate("/home");
+        }
+      });
+      setMessage("Please Insert Proper Email or Password");
     }
   };
   return (
@@ -74,6 +76,9 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <br />
+      <p>npx json-server --watch db.json</p>
+      <br />
       <Image src={bgImg} />
     </>
   );

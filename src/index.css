@@ -109,3 +109,20 @@ img {
 .login-form {
   margin: auto;
 }
+
+.navbar-expand-lg {
+  .container {
+    width: 100%;
+  }
+}
+
+.logout-button {
+  background-color: rgb(243, 20, 20);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  float: inline-end;
+}
