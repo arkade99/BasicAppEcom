@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container, Button } from "react-bootstrap";
+import { Navbar, Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function Header() {

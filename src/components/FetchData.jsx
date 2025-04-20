@@ -3,7 +3,7 @@ import axios from "axios";
 export const FetchUserData = async () => {
   try {
     const response = await axios.get("http://localhost:3000/user");
-    console.log("Fetch Data ", response);
+    // console.log("Fetch Data ", response);
     return response.data;
   } catch (error) {
     console.log("Fetch Data Error", error);
@@ -15,7 +15,6 @@ export const FetchUserData = async () => {
 export const FetchDataProducts = async () => {
   try {
     const response = await axios.get("http://localhost:3000/products");
-    console.log("Fetch Data ", response);
     return response.data;
   } catch (error) {
     console.log("Fetch Data Error", error);

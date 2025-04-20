@@ -1,43 +1,40 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { FetchDataProducts } from "./FetchData";
 
 const Home = () => {
+  const [allProducts, setAllProducts] = useState(null);
   const navigate = useNavigate();
+  const token = JSON.parse(localStorage.getItem("Current_User"));
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("Current_User"));
     if (token == null) {
       alert("Please Log in"), navigate("/login");
+    } else {
+      const getProductData = async () => {
+        try {
+          const result = await FetchDataProducts();
+          console.log("allProductsresult", result);
+          setAllProducts(result);
+        } catch (error) {
+          console.error("Failed to fetch data", error);
+        }
+      };
+      getProductData();
     }
   }, []);
-  const [apiData, setApiData] = useState();
-  const getProfileData = () => {
-    axios
-      .get("http://localhost:3000/user")
-      .then((response) => {
-        // console.log(response.data);
-        console.log("Response is", response);
-        setApiData(response.data);
-      })
-      .catch((error) => {
-        console.log("Error ", error);
-      });
-  };
-  console.log("ApiData: ", apiData);
+
   return (
     <>
       <div className="main-page">
         <h2>Wellcome</h2>
-        <h4>JSON Data fetch using axios</h4>
-        <Button onClick={getProfileData} variant="primary">
-          Get Profile data
-        </Button>
-        {apiData && (
-          <ul>
-            <li>Name: {apiData[0].name}</li>
-          </ul>
-        )}
+        <div>
+          {allProducts &&
+            allProducts.map((product) => (
+              <ul key={product.id}>
+                <li>{product.name}</li>
+              </ul>
+            ))}
+        </div>
       </div>
     </>
   );

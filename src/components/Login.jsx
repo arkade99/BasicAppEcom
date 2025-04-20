@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { FetchUserData } from "./FetchData";
 
 const Login = () => {
-  //const [formData, setFormData] = useState({ email: "", password: "" });
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [message, setMessage] = useState("");
