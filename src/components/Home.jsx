@@ -32,6 +32,7 @@ const Home = () => {
             allProducts.map((product) => (
               <ul key={product.id}>
                 <li>{product.name}</li>
+                <li>{/* <img src={product.image} /> */}</li>
               </ul>
             ))}
         </div>
