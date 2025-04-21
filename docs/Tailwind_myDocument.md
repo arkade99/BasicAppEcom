@@ -49,16 +49,18 @@
 
 ## 💻 min & max width Snippet
 
-```Basic min & max width concepts
+````Basic min & max width concepts
+```max-[600px] / min-[600px] by this we can pass custom value of particular breakpoint
 
-<h2 class="text-center text-4xl p-5 mt-5 sm:bg-amber-100 md:bg-green-300 lg:bg-red-500 xl:bg-blue-400 2xl:bg-yellow-400">Hi I am using Tailwind MinWidth</h2>
+<h2 class="text-center text-4xl p-5 mt-5 sm:bg-amber-100 md:bg-green-300 lg:bg-red-500 xl:bg-blue-400 2xl:bg-yellow-400">
+Hi I am using Tailwind MinWidth</h2>
 
 
 <h2 class="text-center text-4xl p-5 mt-5 max-sm:bg-amber-100 max-lg:bg-red-500">Hi I am using Tailwind MaxWidth</h2>
 
 
 
-```
+````
 
 ## 🖼️ UI Screenshot
 
