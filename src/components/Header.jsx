@@ -23,7 +23,7 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Brand href="/">SignUp</Navbar.Brand>
         <Navbar.Brand href="/login">Login</Navbar.Brand>
-        <Button className="logout-button" onClick={handelClick}>
+        <Button className="text-4xl" onClick={handelClick}>
           Log Out
         </Button>
       </Container>
