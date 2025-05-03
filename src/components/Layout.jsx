@@ -8,16 +8,16 @@ import Home from "./Home";
 
 function Layout() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div class="container mx-auto ">
         <Header />
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </BrowserRouter>
-    </>
+      </div>
+    </BrowserRouter>
   );
 }
 

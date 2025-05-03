@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="main-page bg-amber-50">
+      <div className="main-page">
         <h2>Wellcome</h2>
         <div>
           {allProducts &&

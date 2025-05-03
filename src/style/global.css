@@ -1,1 +1,22 @@
+@import "tailwindcss";
 
+@theme {
+  --color-tealgreen: #09efb1;
+  --color-background: rgb(242, 240, 237);
+}
+
+@layer base {
+}
+
+@layer components {
+  .common-padding {
+    @apply px-[0.5rem] sm:px-[1rem] md:px-[1.5rem] lg:px-[2rem] xl:px-[1.5rem] 2xl:px-[3.62rem];
+  }
+
+  .header-text {
+    @layer base {
+      a {
+      }
+    }
+  }
+}
