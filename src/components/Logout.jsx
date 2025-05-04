@@ -6,7 +6,11 @@ const Logout = () => {
     localStorage.removeItem("Current_User");
     navigate("/login");
   };
-  return <button onClick={handelClick}>Log Out</button>;
+  return (
+    <button onClick={handelClick}>
+      <img src="/Images/log-out.svg" className="w-8 h-8" />
+    </button>
+  );
 };
 
 export default Logout;

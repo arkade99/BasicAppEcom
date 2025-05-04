@@ -1,8 +1,14 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "@fontsource-variable/plus-jakarta-sans/wght.css";
 
 @theme {
   --color-tealgreen: #09efb1;
   --color-background: rgb(242, 240, 237);
+  --color-lightGray: rgb(165, 165, 165);
+  --font-primary: "Oswald", "sans-serif";
+  --font-roboto: "Roboto", "sans-serif";
+  --font-jakarta-sans: "plus-jakarta-sans", "Helvetica", "sans-serif";
 }
 
 @layer base {
