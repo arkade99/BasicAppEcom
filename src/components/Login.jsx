@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, Image } from "react-bootstrap";
-import bgImg from "../assets/bgImg.jpg";
 import { useNavigate } from "react-router-dom";
 import { FetchUserData } from "./FetchData";
+import "./style/FormStyle.css";
 
 const Login = () => {
   const [inputEmail, setInputEmail] = useState("");
@@ -41,44 +41,51 @@ const Login = () => {
   };
   return (
     <>
-      <div className="main-page">
-        <div>
-          <p className="heading">Log In</p>
+      <div className="flex common-padding">
+        <div className="w-1/2 max-h-[550px]">
+          <img
+            src="/Images/LoginPageImg.jpg"
+            className="w-full max-h-[550px]"
+          />
         </div>
-        <h4 style={{ color: "red" }}>{message}</h4>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="name"
-              placeholder="Enter email"
-              onChange={(e) => setInputEmail(e.target.value)}
-            />
-          </Form.Group>
+        <div className="w-1/2 max-h-[400px] form-card mt-[5%] relative">
+          <Form onSubmit={handleSubmit} className="space-y-6">
+            <p className="heading text-center">Log In</p>
+            <h4 className="error-message">{message}</h4>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="form-lable">Email address</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="Enter email"
+                onChange={(e) => setInputEmail(e.target.value)}
+                className="form-input"
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Enter password"
-              onChange={(e) => setInputPassword(e.target.value)}
-            />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="form-lable">Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                onChange={(e) => setInputPassword(e.target.value)}
+                className="form-input"
+              />
+            </Form.Group>
 
-          <Button variant="success" type="submit">
-            Submit
-          </Button>
-        </Form>
-        <div className="account">
-          <p>
-            Don't have an account?<a href="/">Sign Up Now</a>
-          </p>
+            <div className="grid grid-cols-4 py-6">
+              <Button variant="success" type="submit" className="submit-button">
+                Submit
+              </Button>
+            </div>
+          </Form>
+          <div className="text-bottom absolute left-5 bottom-5">
+            Don't have an account?
+            <a href="/" className="text-blue-700 hover:underline">
+              Sign Up Now
+            </a>
+          </div>
         </div>
       </div>
-      <br />
-      <p>npx json-server --watch db.json</p>
-      <br />
-      <Image src={bgImg} />
     </>
   );
 };

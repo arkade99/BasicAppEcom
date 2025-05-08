@@ -4,6 +4,7 @@ const Logout = () => {
   const navigate = useNavigate();
   const handelClick = () => {
     localStorage.removeItem("Current_User");
+    alert("Logged Out");
     navigate("/login");
   };
   return (
