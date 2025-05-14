@@ -14,7 +14,7 @@
       "id": 1,
       "name": "Wireless Earbuds",
       "price": 2999,
-      "image": "https://via.placeholder.com/150?text=Earbuds",
+      "image": "/Images/Products/WirelessEarbuds.jpg",
       "description": "Compact and powerful wireless earbuds with noise cancellation.",
       "rating": 4.3,
       "reviews": [
@@ -26,7 +26,7 @@
       "id": 2,
       "name": "Smartphone Stand",
       "price": 499,
-      "image": "https://via.placeholder.com/150?text=Phone+Stand",
+      "image": "/Images/Products/Stand.jpg",
       "description": "Adjustable desk stand compatible with all smartphones.",
       "rating": 4.1,
       "reviews": [
@@ -38,7 +38,7 @@
       "id": 3,
       "name": "Bluetooth Speaker",
       "price": 1899,
-      "image": "https://via.placeholder.com/150?text=Speaker",
+      "image": "/Images/Products/BluetoothSpeaker.jpg",
       "description": "Portable speaker with deep bass and long battery life.",
       "rating": 4.5,
       "reviews": [{ "user": "Amit", "comment": "Perfect for outdoor use." }]
@@ -47,7 +47,7 @@
       "id": 4,
       "name": "Fitness Band",
       "price": 1599,
-      "image": "https://via.placeholder.com/150?text=Fitness+Band",
+      "image": "/Images/Products/FitnessBand.jpg",
       "description": "Track your steps, heart rate, and sleep patterns.",
       "rating": 4.0,
       "reviews": [{ "user": "Sneha", "comment": "Accurate tracking." }]
@@ -56,7 +56,7 @@
       "id": 5,
       "name": "USB-C Charger",
       "price": 899,
-      "image": "https://via.placeholder.com/150?text=Charger",
+      "image": "/Images/Products/Usb.jpg",
       "description": "Fast charging USB-C wall charger with 20W output.",
       "rating": 4.2,
       "reviews": [{ "user": "Raj", "comment": "Charges really fast!" }]
@@ -65,7 +65,7 @@
       "id": 6,
       "name": "Laptop Sleeve",
       "price": 749,
-      "image": "https://via.placeholder.com/150?text=Laptop+Sleeve",
+      "image": "/Images/Products/LaptopSleeve.jpg",
       "description": "Protective neoprene sleeve for 13-15 inch laptops.",
       "rating": 4.4,
       "reviews": [{ "user": "Divya", "comment": "Good quality material." }]
@@ -74,7 +74,7 @@
       "id": 7,
       "name": "Wireless Mouse",
       "price": 599,
-      "image": "https://via.placeholder.com/150?text=Mouse",
+      "image": "/Images/Products/WirelessMouse.jpg",
       "description": "Ergonomic wireless mouse with adjustable DPI.",
       "rating": 4.1,
       "reviews": [{ "user": "Karan", "comment": "Comfortable to use." }]
@@ -83,7 +83,7 @@
       "id": 8,
       "name": "Gaming Keyboard",
       "price": 2299,
-      "image": "https://via.placeholder.com/150?text=Keyboard",
+      "image": "/Images/Products/GamingKeyboard.jpg",
       "description": "Backlit mechanical keyboard with RGB lighting.",
       "rating": 4.6,
       "reviews": [{ "user": "Rohit", "comment": "Love the clicky keys!" }]
@@ -92,7 +92,7 @@
       "id": 9,
       "name": "Portable SSD 500GB",
       "price": 4899,
-      "image": "https://via.placeholder.com/150?text=SSD",
+      "image": "/Images/Products/PortableSSD.jpg",
       "description": "Ultra-fast external SSD with USB 3.1 connectivity.",
       "rating": 4.7,
       "reviews": [{ "user": "Simran", "comment": "Super fast data transfer." }]
@@ -101,7 +101,7 @@
       "id": 10,
       "name": "Webcam HD 1080p",
       "price": 1399,
-      "image": "https://via.placeholder.com/150?text=Webcam",
+      "image": "/Images/Products/Webcam.jpg",
       "description": "HD webcam with built-in microphone for video calls.",
       "rating": 4.0,
       "reviews": [{ "user": "Aditya", "comment": "Works great with Zoom." }]
@@ -110,7 +110,7 @@
       "id": 11,
       "name": "Noise Cancelling Headphones",
       "price": 3599,
-      "image": "https://via.placeholder.com/150?text=Headphones",
+      "image": "/Images/Products/Headphones.jpg",
       "description": "Over-ear headphones with active noise cancellation.",
       "rating": 4.5,
       "reviews": [{ "user": "Maya", "comment": "Excellent sound and comfort." }]
@@ -119,7 +119,7 @@
       "id": 12,
       "name": "Smart LED Bulb",
       "price": 699,
-      "image": "https://via.placeholder.com/150?text=LED+Bulb",
+      "image": "/Images/Products/SmartLEDBulb.jpg",
       "description": "Wi-Fi enabled LED bulb with app control and color change.",
       "rating": 4.3,
       "reviews": [{ "user": "Imran", "comment": "Fun and functional." }]
@@ -128,7 +128,7 @@
       "id": 13,
       "name": "Laptop Stand",
       "price": 1199,
-      "image": "https://via.placeholder.com/150?text=Laptop+Stand",
+      "image": "/Images/Products/LaptopStand.jpg",
       "description": "Adjustable stand for ergonomic laptop use.",
       "rating": 4.4,
       "reviews": [{ "user": "Priya", "comment": "Helps with posture." }]
@@ -137,7 +137,7 @@
       "id": 14,
       "name": "Desk Organizer",
       "price": 549,
-      "image": "https://via.placeholder.com/150?text=Organizer",
+      "image": "/Images/Products/DeskOrganizer.jpg",
       "description": "Multi-compartment desk organizer for office supplies.",
       "rating": 4.2,
       "reviews": [{ "user": "Ankit", "comment": "Neat and useful." }]
@@ -146,7 +146,7 @@
       "id": 15,
       "name": "Power Bank 10000mAh",
       "price": 1399,
-      "image": "https://via.placeholder.com/150?text=Power+Bank",
+      "image": "/Images/Products/PowerBank.jpg",
       "description": "Compact power bank with dual USB output.",
       "rating": 4.3,
       "reviews": [{ "user": "Sanya", "comment": "Charges my phone twice." }]

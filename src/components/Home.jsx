@@ -31,8 +31,19 @@ const Home = () => {
           {allProducts &&
             allProducts.map((product) => (
               <ul key={product.id}>
-                <li>{product.name}</li>
-                <li>{/* <img src={product.image} /> */}</li>
+                <li>
+                  <h1>{product.name}</h1>
+                </li>
+                <li>
+                  <img
+                    className="max-w-[384px] max-h-[250px]"
+                    src={product.image}
+                  />
+                </li>
+                <br />
+                <li>{product.price}</li>
+                <li>{product.description}</li>
+                <br />
               </ul>
             ))}
         </div>

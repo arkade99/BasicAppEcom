@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, Image } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FetchUserData } from "./FetchData";
 import "./style/FormStyle.css";
