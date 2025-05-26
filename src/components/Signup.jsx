@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./style/FormStyle.css";
+import axios from "axios";
+import { FetchUserData } from "./FetchData";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,18 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const [allUserData, setAllUserData] = useState(null);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const result = await FetchUserData();
+        setAllUserData(result);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
   const navigate = useNavigate();
   const handelInput = (e) => {
     const value = e.target.value;
@@ -17,9 +31,8 @@ const Signup = () => {
       return { ...pre, [name]: value };
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //console.log("Form Data Submitted:", formData);
     if (
       formData.name == "" ||
       formData.email == "" ||
@@ -27,14 +40,24 @@ const Signup = () => {
     ) {
       alert("Please insert details");
     } else {
-      const getData = JSON.parse(localStorage.getItem("User") || "[]");
-      console.log(getData);
-      let arr = [];
-      arr = [...getData];
-      arr.push(formData);
-      localStorage.setItem("User", JSON.stringify(arr));
-      alert("Successful");
-      navigate("/home");
+      const result = allUserData.find(({ email }) => email === formData.email);
+      console.log(result);
+      if (result != null) {
+        alert("User alredy exits");
+        navigate("/login");
+      } else {
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/posts",
+            formData
+          );
+          console.log("Post created:", response.data);
+          localStorage.setItem("Current_User", JSON.stringify(response.data));
+          alert("Successful");
+        } catch (error) {
+          console.log(error);
+        }
+      }
     }
   };
   return (

@@ -9,7 +9,7 @@ import Home from "./Home";
 function Layout() {
   return (
     <BrowserRouter>
-      <div class="container mx-auto ">
+      <div className="container mx-auto ">
         <Header />
         <Routes>
           <Route path="/" element={<Signup />} />
