@@ -1,25 +1,86 @@
 {
   "user": [
     {
-      "id": "0",
+      "id": 0,
       "name": "Arka",
       "email": "arkapravade99@gmail.com",
       "password": "12345"
     },
     {
-      "id": "1",
+      "id": 1,
       "name": "A",
       "email": "a",
       "password": "a"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "B",
       "email": "b",
       "password": "b"
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "email": "c",
+      "password": "c"
+    },
+    {
+      "id": 4,
+      "name": "d",
+      "email": "d",
+      "password": "d"
     }
   ],
-  "posts": [],
+  "posts": [
+    {
+      "id": "",
+      "name": "ee",
+      "email": "ee",
+      "password": "re"
+    },
+    {
+      "id": "",
+      "name": "w",
+      "email": "w",
+      "password": "w"
+    },
+    {
+      "id": "",
+      "name": "ewew",
+      "email": "ewew",
+      "password": "we"
+    },
+    {
+      "id": null,
+      "name": "x",
+      "email": "xs",
+      "password": "xer"
+    },
+    {
+      "id": null,
+      "name": "hgf",
+      "email": "jhhg",
+      "password": "jh"
+    },
+    {
+      "id": null,
+      "name": "asaz",
+      "email": "aqaqa",
+      "password": "qaq"
+    },
+    {
+      "id": 3,
+      "name": "qweeeeeeeeqw",
+      "email": "wwwwwwwwwwwweq",
+      "password": "qqq"
+    },
+    {
+      "id": 3,
+      "name": "wq",
+      "email": "weq",
+      "password": "wqe"
+    }
+  ],
   "products": [
     {
       "id": "1",

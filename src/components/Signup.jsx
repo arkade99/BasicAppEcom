@@ -7,6 +7,7 @@ import { FetchUserData } from "./FetchData";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
+    id: null,
     name: "",
     email: "",
     password: "",
@@ -41,19 +42,31 @@ const Signup = () => {
       alert("Please insert details");
     } else {
       const result = allUserData.find(({ email }) => email === formData.email);
-      console.log(result);
+      //console.log(result);
       if (result != null) {
         alert("User alredy exits");
         navigate("/login");
       } else {
+        const nextId =
+          allUserData.length > 0
+            ? allUserData[allUserData.length - 1].id + 1
+            : 0;
+        //console.log("lastId", nextId);
+        const newUser = {
+          ...formData,
+          id: nextId,
+        };
+        //console.log(newUser);
+
         try {
           const response = await axios.post(
-            "http://localhost:3000/posts",
-            formData
+            "http://localhost:3000/user",
+            newUser
           );
-          console.log("Post created:", response.data);
+          //console.log("Post created:", response.data);
           localStorage.setItem("Current_User", JSON.stringify(response.data));
           alert("Successful");
+          navigate("/home");
         } catch (error) {
           console.log(error);
         }
